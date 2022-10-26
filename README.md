@@ -93,7 +93,10 @@ also review the results of an automated analysis.
 
 ## Handing In
 
-Please add `ebper` on GitHub and share the private Repo. We will provide feedback via email or the final interview depending on whether you
+Please copy the contents of this repository into your own private GitHub repository and add `ebper` to the project.
+It is important that you do not commit your solution to this repository as it could expose your coding challenge to other candidates.
+
+We will provide feedback via email or the final interview depending on whether you
 pass.
 
 ## Help & Questions
