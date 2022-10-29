@@ -1,21 +1,31 @@
 const express = require('express');
-const mysql = require('mysql');
+const mysql = require('mysql2');
 
 const app = express();
 const port = 3000
 
 const connection = mysql.createConnection({
-    host: 'localhost:8001',
+    host: 'database',
     user: 'perlego',
     password: 'perlego',
     database: 'perlego'
-})
+});
 
-connection.connect()
+connection.connect(error => {
+    if (error) {
+        console.log("A error has been occurred "
+            + "while connecting to database.");
+        throw error;
+    }
+
+    app.listen(port, () => {
+        console.log(`Backend app listening on port ${port}`)
+    });
+});
 
 app.get('/', (req, res) => {
     res.json({ message: 'Hello, friend!' })
-})
+});
 
 app.get('/books/suggestions', (req, res) => {
     res.json({
@@ -29,8 +39,4 @@ app.get('/books/suggestions', (req, res) => {
             },
         ]
     })
-})
-
-app.listen(port, () => {
-    console.log(`Backend app listening on port ${port}`)
 })
