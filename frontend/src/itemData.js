@@ -1,76 +1,95 @@
-const itemData =
-    [
-        {
-            img: 'https://images.unsplash.com/photo-1551963831-b3b1ca40c98e',
-            title: 'Breakfast',
-            author: '@bkristastucchio',
-            rows: 2,
-            cols: 2,
-            featured: true,
-        },
-        {
-            img: 'https://images.unsplash.com/photo-1551782450-a2132b4ba21d',
-            title: 'Burger',
-            author: '@rollelflex_graphy726',
-        },
-        {
-            img: 'https://images.unsplash.com/photo-1522770179533-24471fcdba45',
-            title: 'Camera',
-            author: '@helloimnik',
-        },
-        {
-            img: 'https://images.unsplash.com/photo-1444418776041-9c7e33cc5a9c',
-            title: 'Coffee',
-            author: '@nolanissac',
-            cols: 2,
-        },
-        {
-            img: 'https://images.unsplash.com/photo-1533827432537-70133748f5c8',
-            title: 'Hats',
-            author: '@hjrc33',
-            cols: 2,
-        },
-        {
-            img: 'https://images.unsplash.com/photo-1558642452-9d2a7deb7f62',
-            title: 'Honey',
-            author: '@arwinneil',
-            rows: 2,
-            cols: 2,
-            featured: true,
-        },
-        {
-            img: 'https://images.unsplash.com/photo-1516802273409-68526ee1bdd6',
-            title: 'Basketball',
-            author: '@tjdragotta',
-        },
-        {
-            img: 'https://images.unsplash.com/photo-1518756131217-31eb79b20e8f',
-            title: 'Fern',
-            author: '@katie_wasserman',
-        },
-        {
-            img: 'https://images.unsplash.com/photo-1597645587822-e99fa5d45d25',
-            title: 'Mushrooms',
-            author: '@silverdalex',
-            rows: 2,
-            cols: 2,
-        },
-        {
-            img: 'https://images.unsplash.com/photo-1567306301408-9b74779a11af',
-            title: 'Tomato basil',
-            author: '@shelleypauls',
-        },
-        {
-            img: 'https://images.unsplash.com/photo-1471357674240-e1a485acb3e1',
-            title: 'Sea star',
-            author: '@peterlaster',
-        },
-        {
-            img: 'https://images.unsplash.com/photo-1589118949245-7d38baf380d6',
-            title: 'Bike',
-            author: '@southside_customs',
-            cols: 2,
-        },
-    ];
-    
-export itemData;
+import orwell from './Images/orwell.png';
+import braveNewWorld from './Images/braveNewWorld.png';
+import klaraAndTheSun from './Images/klaraAndTheSun.png';
+import kafka from './Images/kafka.png';
+import elifShafak from './Images/elifShafak.png';
+import sapiens from './Images/sapiens.png';
+import christineAffair from './Images/christineAffair.png';
+import howToKillYourFamily from './Images/howToKillYourFamily.png';
+import diedTwice from './Images/diedTwice.png';
+import guideToMurder from './Images/guideToMurder.png';
+import sallyRooney from './Images/sallyRooney.png';
+import midnightLibrary from './Images/midnightLibrary.png';
+import witches from './Images/witches.png';
+import theTrees from './Images/theTrees.png';
+import bellJar from './Images/bellJar.png';
+
+export const itemData = [
+    {
+        img: orwell,
+        title: '1984',
+        author: 'George',
+    },
+    {
+        img: braveNewWorld,
+        title: 'Brave New World',
+        author: 'Aldous Huxley',
+    },
+    {
+        img: klaraAndTheSun,
+        title: 'Klara And The Sun',
+        author: 'Kazuo Ishiguro',
+    },
+    {
+        img: kafka,
+        title: 'Kafka On The Shore',
+        author: 'Haruki Murakami',
+    },
+    {
+        img: elifShafak,
+        title: 'The Island of Missing Trees',
+        author: 'Elif Shafak',
+    },
+    {
+        img: sapiens,
+        title: 'Sapiens: A Brief History of Humankind',
+        author: 'Yuval Noah Harari',
+    },
+    {
+        img: christineAffair,
+        title: 'The Christine Affair',
+        author: 'Nina de Gramont',
+    },
+    {
+        img: howToKillYourFamily,
+        title: 'How To Kill Your Family',
+        author: 'Bella Mackie',
+    },
+    {
+        img: diedTwice,
+        title: 'The Man Who Died Twice',
+        author: 'Richard Osman',
+    },
+    {
+        img: guideToMurder,
+        title: 'A Good Girls Guide to Murder',
+        author: 'Holly Jackson',
+    },
+    {
+        img: sallyRooney,
+        title: 'Beautiful World, Where Are You',
+        author: 'Sally Ronney',
+    },
+    {
+        img: midnightLibrary,
+        title: 'The Midnight Library',
+        author: 'Matt Haig',
+    },
+    {
+        img: witches,
+        title: 'The Lighthouse Witches',
+        author: 'C.J. Cooke',
+    },
+    {
+        img: theTrees,
+        title: 'The Trees',
+        author: 'Percival Everett',
+    },
+    {
+        img: bellJar,
+        title: 'The Bell Jar',
+        author: 'Sylvia Plath',
+    },
+];
+
+export default itemData;
