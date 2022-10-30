@@ -1,5 +1,6 @@
 const express = require('express');
 const mysql = require('mysql2');
+const { getBook } = require('./utils/queryHelper');
 
 const app = express();
 const port = 3000
@@ -10,6 +11,8 @@ const connection = mysql.createConnection({
     password: 'perlego',
     database: 'perlego'
 });
+
+const genericError = "Something went wrong";
 
 connection.connect(error => {
     if (error) {
@@ -39,4 +42,24 @@ app.get('/books/suggestions', (req, res) => {
             },
         ]
     })
+})
+
+app.get("/id", async function (request, response) {
+    const { id } = request.params
+    try {
+        const [result] = await getBook(id)
+        if (result.length > 0) {
+            response.send({ success: true, result: result[0] })
+        } else {
+            response.status(404).send({
+                success: false,
+                error: `No book found with id ${id}`,
+            })
+        }
+    } catch (error) {
+        response.status(500).send({
+            success: false,
+            error: genericError,
+        })
+    }
 })
