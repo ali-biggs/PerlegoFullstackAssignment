@@ -23,15 +23,15 @@ export default function BooksToReadGrid() {
     <div className='App' style={{ background: '#121212' }}>
       <BookContextProvider>
         <h2 style={{ marginLeft: 50 }}>Books you might like to read...</h2>
-        <Grid2 container spacing={2} sx={{ background: '#121212', color: '#EEEEEE', marginLeft: 5 }} >
+        <Grid2 container spacing={2} sx={{ background: '#121212', color: '#EEEEEE', marginLeft: 5 }} flex >
           <ImageList sx={{ width: 1300, height: 1000 }} cols={4} >
-            <ImageListItem>
-              <BookForm />
-              <Navbar />
-              <BookList />
+            <ImageListItem flex>
+              <BookForm flex />
+              <Navbar flex />
+              <BookList flex />
             </ImageListItem>
             {itemData.map((item) => (
-              <Grid2>
+              <Grid2 flex>
                 <ImageListItem key={item.id}>
                   <img
                     src={`${item.img}?w=248&fit=crop&auto=format`}
