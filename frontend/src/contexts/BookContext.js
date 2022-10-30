@@ -6,11 +6,11 @@ const BookContextProvider = (props) => {
     const [books, setBooks] = useState([]);
 
     const addBook = (title, author) => {
-        setBooks([...books, { title, author, id }]);
+        setBooks([...books, { title, author }]);
     };
 
-    const removeBook = (id) => {
-        setBooks(books.filter(book => book.id !== id));
+    const removeBook = (title) => {
+        setBooks(books.filter(book => book.title !== title));
     };
 
     return (
