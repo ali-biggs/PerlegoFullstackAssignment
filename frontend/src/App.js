@@ -1,28 +1,38 @@
+import React from 'react';
 import ImageList from '@mui/material/ImageList';
 import ImageListItem from '@mui/material/ImageListItem';
 import ImageListItemBar from '@mui/material/ImageListItemBar';
 import IconButton from '@mui/material/IconButton';
 import BookmarkAddOutlinedIcon from '@mui/icons-material/BookmarkAddOutlined';
 import Grid2 from '@mui/material/Unstable_Grid2';
+//import Box from '@mui/material/Box';
 import itemData from './itemData';
 import BookContextProvider from './contexts/BookContext';
 import Navbar from './components/Navbar';
+import BookList from './components/BookList';
+import BookForm from './components/BookForm';
 
-const handleClick = (e) => {
-  e.preventDefault();
-  console.log("working");
-}
 
 export default function BooksToReadGrid() {
+
+  //TODO - add book to booklist on click of bookmark icon
+  const handleClick = (e) => {
+    e.preventDefault();
+    console.log("testing");
+  }
+
   return (
-    <div>
-      <h2>Books you might like to read...</h2>
+    <div className='App' style={{ background: '#121212' }}>
       <BookContextProvider>
-        <Grid2 container spacing={2}  >
+        <h2 style={{ marginLeft: 50 }}>Books you might like to read...</h2>
+        <Navbar />
+        <BookList />
+        <BookForm style={{ marginLeft: 50 }} />
+        <Grid2 container spacing={2} sx={{ background: '#121212', color: '#EEEEEE', marginLeft: 5 }} >
           <ImageList sx={{ width: 1300, height: 1000 }} cols={4} >
             {itemData.map((item) => (
               <Grid2>
-                <ImageListItem key={item.img}>
+                <ImageListItem key={item.id}>
                   <img
                     src={`${item.img}?w=248&fit=crop&auto=format`}
                     srcSet={`${item.img}?w=248&fit=crop&auto=format&dpr=2 2x`}
@@ -47,7 +57,6 @@ export default function BooksToReadGrid() {
             ))}
           </ImageList>
         </Grid2>
-        <Navbar />
       </BookContextProvider>
     </div>
   );
