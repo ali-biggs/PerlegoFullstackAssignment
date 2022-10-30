@@ -5,13 +5,11 @@ import ImageListItemBar from '@mui/material/ImageListItemBar';
 import IconButton from '@mui/material/IconButton';
 import BookmarkAddOutlinedIcon from '@mui/icons-material/BookmarkAddOutlined';
 import Grid2 from '@mui/material/Unstable_Grid2';
-//import Box from '@mui/material/Box';
 import itemData from './itemData';
 import BookContextProvider from './contexts/BookContext';
 import Navbar from './components/Navbar';
 import BookList from './components/BookList';
 import BookForm from './components/BookForm';
-
 
 export default function BooksToReadGrid() {
 
@@ -25,11 +23,13 @@ export default function BooksToReadGrid() {
     <div className='App' style={{ background: '#121212' }}>
       <BookContextProvider>
         <h2 style={{ marginLeft: 50 }}>Books you might like to read...</h2>
-        <Navbar />
-        <BookList />
-        <BookForm style={{ marginLeft: 50 }} />
         <Grid2 container spacing={2} sx={{ background: '#121212', color: '#EEEEEE', marginLeft: 5 }} >
           <ImageList sx={{ width: 1300, height: 1000 }} cols={4} >
+            <ImageListItem>
+              <BookForm />
+              <Navbar />
+              <BookList />
+            </ImageListItem>
             {itemData.map((item) => (
               <Grid2>
                 <ImageListItem key={item.id}>

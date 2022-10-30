@@ -13,7 +13,7 @@ const BookList = () => {
             </ul>
         </div>
     ) : (
-        <div className="empty">Please select a book using the bookmark icon</div >
+        <div className="empty"></div >
 
     );
 }

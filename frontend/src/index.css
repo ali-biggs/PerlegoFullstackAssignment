@@ -19,15 +19,15 @@ body {
 
 .navbar {
   position: absolute;
-  top: 3%;
-  right: 5%;
+  top: 9%;
+  left: 3%;
   text-align: center;
 }
 
 .book-list {
   position: absolute;
-  top: 10%;
-  right: 13%;
+  top: 30%;
+  left: 3%;
   text-align: center;
   margin-top: 10px;
 }
@@ -39,6 +39,7 @@ body {
 .book-list li:hover {
   text-decoration: line-through;
   opacity: 0.7;
+  padding-top: 5px;
 }
 
 .empty {
