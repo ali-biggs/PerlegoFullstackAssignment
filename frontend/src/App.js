@@ -48,7 +48,7 @@ export default function BooksToReadGrid() {
                         aria-label={`info about ${item.title}`}
 
                       >
-                        <a href={item.link} target='_blank' rel="noreferrer noopener" style={{ color: '#EEEEEE', opacity: 0.7 }}>
+                        <a href={item.link} target='_blank' rel="noreferrer noopener" style={{ color: 'rgba(255, 255, 255, 0.54)' }}>
                           <AddShoppingCartTwoToneIcon />
                         </a>
                       </IconButton>

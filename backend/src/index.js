@@ -30,21 +30,21 @@ app.get('/', (req, res) => {
     res.json({ message: 'Hello, friend!' })
 });
 
-app.get('/books/suggestions', (req, res) => {
-    res.json({
-        count: 1,
-        books: [
-            {
-                id: 1,
-                title: 'foo',
-                author: 'bar',
-                cover: 'https://www.perlego.com/books/RM_Books/baker_academic_gcmneit/9781493405961_300_450.jpg'
-            },
-        ]
-    })
-})
+// app.get('/books/suggestions', (req, res) => {
+//     res.json({
+//         count: 1,
+//         books: [
+//             {
+//                 id: 1,
+//                 title: 'foo',
+//                 author: 'bar',
+//                 cover: 'https://www.perlego.com/books/RM_Books/baker_academic_gcmneit/9781493405961_300_450.jpg'
+//             },
+//         ]
+//     })
+// })
 
-app.get("/id", async function (request, response) {
+app.get("/:id", async function (request, response) {
     const { id } = request.params
     try {
         const [result] = await getBook(id)

@@ -6,6 +6,24 @@ challenge that you could experience on the job. The role you're applying for, wi
 to have an understanding of javascript/typescript across the stack and knowledge of React,
 Node and appropriate test libraries. We would like to see the use of these in the below.
 
+## Notes for Pascal
+Hey Pascal, hope you're well! I just wanted to add a few bullet points explaining my work:
+ - Unfortunately I couldn't get the backend set up and running (you'll see my attempts). 
+  I spent two evenings trying to figure out express (finally figured out I needed mysql2),
+  however I decided I was wasting too much time and to move onto the frontend instead, 
+  hence why I added in some static book data there
+ - With regards to the frontend, I decided to use a Material UI grid as it's meant to be
+  fully responsive out the box and provides aria tags for accessibility. You'll notice that 
+  I haven't got this completely right however, as when it's view on a mobile the first 
+  book appears larger than the others
+ - The reading list was orginally on the right hand side outside of the grid, and although
+  this looks better on a large screen when viewed on a smaller screen it disappeared 
+  behind the grid. This is why I decided to add it as the first object in the grid. 
+ - My original plan was to have a bookmark icon in the ImageListItemBar, and create an onClick
+  event which would add the book to the reading list. I couldn't figure out how to do this, so instead
+  I changed it to a shopping cart which takes you to the books amazon page
+ - I am new to Jest/RTL so I've only been able to create one test for my App component 
+
 ## The Task
 
 For the assignment, we would like you to create a “Books You Might Like” grid component. You can
