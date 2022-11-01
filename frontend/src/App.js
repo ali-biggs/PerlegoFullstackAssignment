@@ -1,9 +1,17 @@
-import React from 'react';
+import React, { useState } from 'react';
 import ImageList from '@mui/material/ImageList';
 import ImageListItem from '@mui/material/ImageListItem';
 import ImageListItemBar from '@mui/material/ImageListItemBar';
 import IconButton from '@mui/material/IconButton';
+//import CloseIcon from '@mui/icons-material/Close';
+import Button from '@mui/material/Button';
 import AddShoppingCartTwoToneIcon from '@mui/icons-material/AddShoppingCartTwoTone';
+import Tooltip from '@mui/material/Tooltip';
+import Dialog from '@mui/material/Dialog';
+import DialogTitle from '@mui/material/DialogTitle';
+import DialogContent from '@mui/material/DialogContent';
+import DialogActions from '@mui/material/DialogActions';
+import DialogContentText from '@mui/material/DialogContentText';
 import Grid2 from '@mui/material/Unstable_Grid2';
 import itemData from './itemData';
 import BookContextProvider from './contexts/BookContext';
@@ -18,6 +26,18 @@ export default function BooksToReadGrid() {
   //   e.preventDefault();
   //   console.log("testing");
   // }
+
+  const [open, setOpen] = useState(false);
+  const [content, setContent] = useState('');
+
+  const handleClickOpen = ({ synopsis }) => {
+    setOpen(true);
+    setContent({ synopsis })
+  };
+  const handleClose = () => {
+    setOpen(false);
+    setContent('')
+  };
 
   return (
     <div className='App' style={{ background: '#121212' }}>
@@ -37,21 +57,25 @@ export default function BooksToReadGrid() {
                     src={`${item.img}?w=248&fit=crop&auto=format`}
                     srcSet={`${item.img}?w=248&fit=crop&auto=format&dpr=2 2x`}
                     alt={item.title}
+                    synopsis={item.synopsis}
                     loading="lazy"
+                    onClick={handleClickOpen}
                   />
                   <ImageListItemBar
                     title={item.title}
                     subtitle={item.author}
                     actionIcon={
-                      <IconButton
-                        sx={{ color: 'rgba(255, 255, 255, 0.54)' }}
-                        aria-label={`info about ${item.title}`}
+                      <Tooltip title={item.price}>
+                        <IconButton
+                          sx={{ color: 'rgba(255, 255, 255, 0.54)' }}
+                          aria-label={`info about ${item.title}`}
 
-                      >
-                        <a href={item.link} target='_blank' rel="noreferrer noopener" style={{ color: 'rgba(255, 255, 255, 0.54)' }}>
-                          <AddShoppingCartTwoToneIcon />
-                        </a>
-                      </IconButton>
+                        >
+                          <a href={item.link} target='_blank' rel="noreferrer noopener" style={{ color: 'rgba(255, 255, 255, 0.54)' }}>
+                            <AddShoppingCartTwoToneIcon />
+                          </a>
+                        </IconButton>
+                      </Tooltip>
                     }
                   />
                 </ImageListItem>
@@ -60,6 +84,27 @@ export default function BooksToReadGrid() {
           </ImageList>
         </Grid2>
       </BookContextProvider>
+
+      <Dialog
+        open={open}
+        onClose={handleClose}
+        aria-labelledby="dialog-title"
+        aria-describedby="dialog-description"
+      >
+        <DialogTitle id="dialog-title">
+          {"Synopsis"}
+        </DialogTitle>
+        <DialogContent>
+          <DialogContentText id="dialog-description">
+            {content.synopsis}
+          </DialogContentText>
+        </DialogContent>
+        <DialogActions>
+          <Button onClick={handleClose} autoFocus>
+            Exit
+          </Button>
+        </DialogActions>
+      </Dialog>
     </div>
   );
 }
