@@ -15,13 +15,16 @@ Hey Pascal, hope you're well! I just wanted to add a few bullet points explainin
  - With regards to the frontend, I decided to use a Material UI grid as it's meant to be
   fully responsive out the box and provides aria tags for accessibility. You'll notice that 
   I haven't got this completely right however, as when it's view on a mobile the first 
-  book appears larger than the others
+  book appears larger than the others, and the text in the reading list overlaps
  - The reading list was orginally on the right hand side outside of the grid, and although
   this looks better on a large screen when viewed on a smaller screen it disappeared 
   behind the grid. This is why I decided to add it as the first object in the grid. 
  - My original plan was to have a bookmark icon in the ImageListItemBar, and create an onClick
   event which would add the book to the reading list. I couldn't figure out how to do this, so instead
-  I changed it to a shopping cart which takes you to the books amazon page
+  I changed it to a shopping cart which takes you to the books amazon page, and a tooltip which 
+  shows the price
+ - I added a dialog box which displays a summary of the book when the user clicks on the image, 
+  also with a tooltip informing the user that they can click the book
  - I am new to Jest/RTL so I've only been able to create one test for my App component 
 
 ## The Task
