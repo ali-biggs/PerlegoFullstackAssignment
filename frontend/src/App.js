@@ -3,7 +3,6 @@ import ImageList from '@mui/material/ImageList';
 import ImageListItem from '@mui/material/ImageListItem';
 import ImageListItemBar from '@mui/material/ImageListItemBar';
 import IconButton from '@mui/material/IconButton';
-//import CloseIcon from '@mui/icons-material/Close';
 import Button from '@mui/material/Button';
 import AddShoppingCartTwoToneIcon from '@mui/icons-material/AddShoppingCartTwoTone';
 import Tooltip from '@mui/material/Tooltip';
