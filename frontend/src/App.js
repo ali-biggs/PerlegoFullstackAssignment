@@ -21,12 +21,6 @@ import BookForm from './components/BookForm';
 
 export default function BooksToReadGrid() {
 
-  //TODO - add book to booklist on click of icon
-  // const handleClick = (e) => {
-  //   e.preventDefault();
-  //   console.log("testing");
-  // }
-
   const [open, setOpen] = useState(false);
   const [content, setContent] = useState('');
 
