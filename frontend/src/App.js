@@ -30,9 +30,9 @@ export default function BooksToReadGrid() {
   const [open, setOpen] = useState(false);
   const [content, setContent] = useState('');
 
-  const handleClickOpen = ({ synopsis }) => {
+  const handleClickOpen = (synopsis) => {
     setOpen(true);
-    setContent({ synopsis })
+    setContent(synopsis)
   };
   const handleClose = () => {
     setOpen(false);
@@ -59,7 +59,7 @@ export default function BooksToReadGrid() {
                     alt={item.title}
                     synopsis={item.synopsis}
                     loading="lazy"
-                    onClick={handleClickOpen}
+                    onClick={() => handleClickOpen(item.synopsis)}
                   />
                   <ImageListItemBar
                     title={item.title}
@@ -96,7 +96,7 @@ export default function BooksToReadGrid() {
         </DialogTitle>
         <DialogContent>
           <DialogContentText id="dialog-description">
-            {content.synopsis}
+            {content}
           </DialogContentText>
         </DialogContent>
         <DialogActions>
