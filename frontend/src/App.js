@@ -53,14 +53,16 @@ export default function BooksToReadGrid() {
             {itemData.map((item) => (
               <Grid2 >
                 <ImageListItem key={item.id}>
-                  <img
-                    src={`${item.img}?w=248&fit=crop&auto=format`}
-                    srcSet={`${item.img}?w=248&fit=crop&auto=format&dpr=2 2x`}
-                    alt={item.title}
-                    synopsis={item.synopsis}
-                    loading="lazy"
-                    onClick={() => handleClickOpen(item.synopsis)}
-                  />
+                  <Tooltip title="Click for a summary" placement='top'>
+                    <img
+                      src={`${item.img}?w=248&fit=crop&auto=format`}
+                      srcSet={`${item.img}?w=248&fit=crop&auto=format&dpr=2 2x`}
+                      alt={item.title}
+                      synopsis={item.synopsis}
+                      loading="lazy"
+                      onClick={() => handleClickOpen(item.synopsis)}
+                    />
+                  </Tooltip>
                   <ImageListItemBar
                     title={item.title}
                     subtitle={item.author}
